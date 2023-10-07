@@ -5,7 +5,8 @@ import math
 from flask_cors import CORS
 app = Flask(__name__, static_folder='static')
 
-CORS(app)
+# CORS(app)
+CORS(app, resources={r"/*": {"origins": "*", "methods": "*", "headers": "*"}})
 
 # Function to generate data for the chart
 def generate_chart_data(file_path, start_year, start_day, end_year, end_day):
