@@ -4,6 +4,7 @@ import numpy as np
 import math
 from flask_cors import CORS
 app = Flask(__name__, static_folder='static')
+app.debug=False
 
 # CORS(app)
 CORS(app, resources={r"/*": {"origins": "*", "methods": "*", "headers": "*"}})
@@ -53,4 +54,4 @@ def chart_data():
         return jsonify({'error': 'No data found for the specified range'}), 404
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run() 
